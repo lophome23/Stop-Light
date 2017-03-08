@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>untitled document</title>
+
+<style media="screen">
+body {
+    background-color:#f0f0f0;
+    font-family:arial,helvetica,sans-serif;
+    font-size:100%;
+ }
+
+#container li {
+    width:100px;
+    height:100px;
+    line-height:50px;
+    margin-bottom:5px;
+    border:2px solid #000;
+    border-radius:50%;
+    box-shadow:inset 0px 6px 6px rgba(0,0,0,0.65);
+    font-size:90%;
+    font-weight:bold;
+    text-align:center;
+ }
+.red {
+    background-color:#f00;
+    color:#000;
+ }
+.amber{
+    background-color:#ffa500;
+ }
+.green{
+    background-color:#0f0;
+    color:#000;
+ }
+.transparent{
+    background-color:transparent;
+    color:transparent;
+ }
+ 
+#container {
+    width:380px; 
+    padding:10px;
+    margin:auto;
+    border:1px solid #999;
+    background-color: black;
+    box-shadow:10px 10px 10px rgba(0,0,0,0.5);
+ }
+
+</style>
+
+</head>
+<body>
+
+<div id="container">
+
+<center>
+<ul>
+  <li id="red">STOP</li>
+  <li id="orange"></li>
+  <li id="green">GO</li>
+</ul>
+</center>
+
+
+</div>
+
+<script>
+
+(function() {
+   'use strict';
+
+   var d=document,r=d.getElementById('red'),
+       o=d.getElementById('orange'),
+       g=d.getElementById('green'),c=0,
+       timer=1000,
+       delay4=2, /* adjust value to suit */
+       delay2=2.5, /* adjust value to suit */
+       delay3=6, /* adjust value to suit */
+       delay4=6.5, /* adjust value to suit */
+       delay5=10; /* adjust value to suit */
+
+   r.className='red';
+   o.className='transparent';
+   g.className='transparent';
+
+function trafficLights(){
+if(c>=delay4) {
+   r.className='red';
+   o.className='transparent';
+ }
+if(c>=delay2) {
+   r.className='transparent';
+   o.className='transparent';
+   g.className='green';
+ }
+if(c>=delay3) {
+   o.className='amber';
+   g.className='transparent';
+ }
+if(c>=delay4) {
+   r.className='red';
+   o.className='transparent';
+ }
+if(c>=delay5) {
+   c=0;
+ }
+   c++; 
+ }
+   setInterval(trafficLights,timer);
+})();
+</script>
+
+</body>
+</html>
+<!-- red 5, green 15, yellow 18, green 21 then back to 0,

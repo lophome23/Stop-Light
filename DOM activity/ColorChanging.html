@@ -1,0 +1,50 @@
+<html>
+<head>
+	<title>DOM Activity</title>
+	<style>
+	.Redbg{
+			background-color: red;
+		}
+	.yellowbg{
+		background-color: yellow;
+	}
+	.greenbg{
+		background-color: green;
+	}
+	</style>
+
+</head>
+<body id="Image">
+	<script type="text/javascript">
+	var bgpro = prompt("Enter a color for your background");
+	switch(bgpro. toLowerCase()){
+		case "red":
+		var bd = "redbg";
+		document.getElementById("Image").
+		setAttribute("class",bd);
+			setInterval(function() {
+			window.location.reload(1);
+		},1000);
+		break;
+		case "yellow":
+			var bd = "yellowbg";
+			document.getElementById("Image").
+			setAttribute("class",bd);
+				setInterval(function() {
+				window.location.reload(1);
+		},1000);
+		break;
+			case "green":
+			var bd = "greenbg";
+			document.getElementById("Image").
+			setAttribute("class",bd);
+				setInterval(function() {
+				window.location.reload(1);
+		},1000);
+		break;
+	default:
+		alert ("no Background color entered.");
+	}
+	</script>
+</body>
+</html>
